@@ -13,7 +13,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "https://bloghiv.herokuapp.com/images/";
+  const PF = "https://bloghiv.herokuapp.com/api/users/upload/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axiosInstance.post("/upload", data);
+        await axiosInstance.post("users/upload", data);
       } catch (err) {}
     }
     try {
