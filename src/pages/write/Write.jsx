@@ -3,6 +3,7 @@ import "./write.css";
 
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config";
+import { FcAddImage } from "react-icons/fc";
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -40,9 +41,12 @@ export default function Write() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
+            Image
+            <FcAddImage className="icon" />
           </label>
           <input
+            action="/:id"
+            method="POST"
             type="file"
             id="fileInput"
             style={{ display: "none" }}

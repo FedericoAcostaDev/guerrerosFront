@@ -60,6 +60,9 @@ export default function Settings() {
               <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
             <input
+              action="/:id"
+              method="POST"
+              enctype="form-data"
               type="file"
               id="fileInput"
               style={{ display: "none" }}
