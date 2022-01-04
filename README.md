@@ -13,9 +13,9 @@ Teamwork project management by Trello.com
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
-### `yarn start`
+### `npm start`
 
 ## fails with stability
 
