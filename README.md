@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
-this is an API project using node.js, Mern with a React.js front-end.
+This is a MERN application
 
-technologies used:
+Technologies used:
 Multer is used for image storage
 Axios to fetch data from mongodb
 Mongodb for database
@@ -17,7 +17,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-## fails with stability
+## Fails with stability
 
 -multer deletes uploaded files afte a moment
 //change upload file for paste URL
@@ -26,9 +26,9 @@ In the project directory, you can run:
 
 ## features to add
 
--fix resposivness
+-Fix resposivness
 -Default profile pic
--add update to the file of the post
+-Add update to the file of the post
 
 ### Deployment
 
