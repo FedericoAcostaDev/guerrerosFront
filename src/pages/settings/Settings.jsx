@@ -13,7 +13,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "https://bloghiv.herokuapp.com/api/users/upload/";
+  const PF = "cloudinary://831536928848822:Rpg3EXsGlbKoIwegxx3A0r5-Pas@bloghiv";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
