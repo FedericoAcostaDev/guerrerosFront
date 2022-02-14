@@ -6,7 +6,10 @@ import "./topbar.css";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
   //if user doesn't have a profilePic we show a replacement
-  const profilePic = user.profilePic ? user.profilePic : "https://react.semantic-ui.com/images/avatar/large/matthew.png"
+  const profilePic =
+    user && user.profilePic
+      ? user && user.profilePic
+      : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
