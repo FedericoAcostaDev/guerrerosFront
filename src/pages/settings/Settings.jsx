@@ -13,35 +13,30 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
+  //if user doesn't have a profilePic we show a replacement
+  const profilePic = user.profilePic ? user.profilePic : "https://react.semantic-ui.com/images/avatar/large/matthew.png"
+  console.log('user is', user)
   const PF = "cloudinary://831536928848822:Rpg3EXsGlbKoIwegxx3A0r5-Pas@bloghiv";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
-    const updatedUser = {
-      userId: user._id,
-      username,
-      email,
-      password,
-    };
     if (file) {
       const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      updatedUser.profilePic = filename;
+      data.append("id", user._id);
+      data.append("type", "file");
+      data.append("avatar", file);
       try {
-        await axiosInstance.post("users/upload", data);
-      } catch (err) {}
-    }
-    try {
-      const res = await axiosInstance.put("/users/" + user._id, updatedUser);
-      setSuccess(true);
-      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-    } catch (err) {
-      dispatch({ type: "UPDATE_FAILURE" });
+        const res = await axiosInstance.post("users/upload", data);
+        setSuccess(true);
+        dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+      } catch (err) {
+        console.log(err);
+        dispatch({ type: "UPDATE_FAILURE" });
+      }
     }
   };
+
   return (
     <div className="settings">
       <div className="settingsWrapper">
@@ -53,7 +48,7 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+              src={file ? URL.createObjectURL(file) : profilePic}
               alt=""
             />
             <label htmlFor="fileInput">

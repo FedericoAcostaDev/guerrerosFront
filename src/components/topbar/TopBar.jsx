@@ -5,7 +5,8 @@ import "./topbar.css";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://bloghiv.herokuapp.com/images/";
+  //if user doesn't have a profilePic we show a replacement
+  const profilePic = user.profilePic ? user.profilePic : "https://react.semantic-ui.com/images/avatar/large/matthew.png"
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -37,7 +38,7 @@ export default function TopBar() {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-            <img className="topImg" src={PF + user.profilePic} alt="" />
+            <img className="topImg" src={profilePic} alt="" />
           </Link>
         ) : (
           <ul className="topList">
