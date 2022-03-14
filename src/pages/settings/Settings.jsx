@@ -14,9 +14,10 @@ export default function Settings() {
 
   const { user, dispatch } = useContext(Context);
   //if user doesn't have a profilePic we show a replacement
-  const profilePic = user.profilePic ? user.profilePic : "https://react.semantic-ui.com/images/avatar/large/matthew.png"
-  console.log('user is', user)
-  const PF = "cloudinary://831536928848822:Rpg3EXsGlbKoIwegxx3A0r5-Pas@bloghiv";
+  const profilePic = user.profilePic
+    ? user.profilePic
+    : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
+  console.log("user is", user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,10 +48,7 @@ export default function Settings() {
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
           <div className="settingsPP">
-            <img
-              src={file ? URL.createObjectURL(file) : profilePic}
-              alt=""
-            />
+            <img src={file ? URL.createObjectURL(file) : profilePic} alt="" />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
