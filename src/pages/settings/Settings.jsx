@@ -19,6 +19,8 @@ export default function Settings() {
     : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
   console.log("user is", user);
 
+  //const PF = "cloudinary://831536928848822:Rpg3EXsGlbKoIwegxx3A0r5-Pas@bloghiv";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
