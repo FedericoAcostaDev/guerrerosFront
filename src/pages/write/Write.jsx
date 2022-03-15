@@ -19,6 +19,11 @@ export default function Write() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const newPost = {
+      username: user.username,
+      title,
+      desc,
+    };
 
     if (file) {
       const data = new FormData();
@@ -33,7 +38,14 @@ export default function Write() {
         console.log(err);
         dispatch({ type: "UPDATE_FAILURE" });
       }
+      try {
+        await axiosInstance.post("/upload", data);
+      } catch (err) {}
     }
+    try {
+      const res = await axiosInstance.post("/posts", newPost);
+      window.location.replace("/post/" + res.data._id);
+    } catch (err) {}
   };
   /*try {
         await axiosInstance.post("/upload", data);
