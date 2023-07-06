@@ -44,16 +44,20 @@ export default function Settings() {
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
-          <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <span className="settingsUpdateTitle">Perfil</span>
+          <span className="settingsDeleteTitle">Eliminar cuenta</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
+          <label>Modificar imagen de perfil</label>
           <div className="settingsPP">
-            <img src={file ? URL.createObjectURL(file) : profilePic} alt="" />
+            <img
+              src={file ? URL.createObjectURL(file) : profilePic}
+              alt="profile-pic"
+            />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
+
             <input
               action="/:id"
               method="POST"
@@ -61,36 +65,36 @@ export default function Settings() {
               type="file"
               id="fileInput"
               style={{ display: "none" }}
-              onChange={(e) => setFile(e.target.files[0])}
+              onClick={(e) => setFile(e.target.files[0])}
             />
           </div>
 
-          <label>Username</label>
+          <label>Modificar nombre de usuario</label>
 
           <input
             type="text"
             placeholder={user.username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <label>Email</label>
+          <label>Modificar Email</label>
           <input
             type="email"
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label>Password</label>
+          <label>Modificar contraseña</label>
           <input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
-            Update
+            Guardar cambios
           </button>
           {success && (
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px" }}
             >
-              Profile has been updated...
+              Cambios Guardados!
             </span>
           )}
         </form>
