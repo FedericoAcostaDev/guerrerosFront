@@ -44,15 +44,19 @@ export default function Settings() {
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
-          <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <span className="settingsUpdateTitle">Perfil</span>
+          <span className="settingsDeleteTitle">Eliminar cuenta</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
+          <label>Modificar imagen de perfil</label>
           <div className="settingsPP">
-            <img src={file ? URL.createObjectURL(file) : profilePic} alt="" />
+            <img
+              src={file ? URL.createObjectURL(file) : profilePic}
+              alt="profile-pic"
+            />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
+              <button className="settingsPPIcon">Buscar en dispositivo</button>
             </label>
             <input
               action="/:id"
