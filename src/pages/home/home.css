@@ -1,3 +1,10 @@
-.home{
-    display: flex;
+.home {
+  display: flex;
+}
+.iconMsj {
+  position: fixed;
+  width: 50px;
+  height: auto;
+  right: 1rem;
+  bottom: 1rem;
 }
