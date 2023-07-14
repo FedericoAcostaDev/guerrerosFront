@@ -25,7 +25,7 @@ export default function Home() {
         <Posts posts={posts} />
         <div className="iconMsj">
           <div className="text-paper">
-            <h4>Soporte y contención</h4>
+            <h4 className="text">Soporte y contención</h4>
           </div>
           <a href="/link/to/site">
             <img src={IconMsj} alt="whatsapp-icon" className="icon" />
