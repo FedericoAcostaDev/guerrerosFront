@@ -23,9 +23,14 @@ export default function Home() {
       <Header />
       <div className="home">
         <Posts posts={posts} />
-        <a href="/link/to/site">
-          <img className="iconMsj" src={IconMsj} alt="whatsapp-icon" />
-        </a>
+        <div className="iconMsj">
+          <div className="text-paper">
+            <h4>Soporte y contención</h4>
+          </div>
+          <a href="/link/to/site">
+            <img src={IconMsj} alt="whatsapp-icon" className="icon" />
+          </a>
+        </div>
       </div>
     </>
   );
