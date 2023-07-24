@@ -1,3 +1,50 @@
-.home{
-    display: flex;
+.home {
+  display: flex;
+}
+.iconMsj {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  z-index: 9999; /* Ensure the component appears on top of other elements */
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .iconMsj {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+.text-paper {
+  background-color: #5af073;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  animation: vanish 3s linear forwards; /* Animation with 5 seconds duration */
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1; /* Start with full opacity */
+  }
+  100% {
+    opacity: 0; /* End with zero opacity */
+    display: none; /* Hide the element after animation completes */
+  }
+}
+.icon {
+  width: 1px;
+  height: 1px;
+}
+.text {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
 }
