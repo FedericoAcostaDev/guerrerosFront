@@ -1,0 +1,44 @@
+@keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(-300px);
+              transform: translateY(-300px);
+      opacity: 1;
+    }
+  }
+.imageUploader{
+    position: relative;
+    overflow-y: hidden;
+    border-radius: 10%;
+    & input{
+        display: none;
+    }
+    & img{
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 250px;
+        max-height: 250px;
+    }
+    & .imageUploader__text{
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 300px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.imageUploader:hover > .imageUploader__text{
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}

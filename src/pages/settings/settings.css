@@ -22,12 +22,32 @@
 .settingsDeleteTitle {
   color: red;
   font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
   cursor: pointer;
+  background-color: #950101;
+  padding: 1vh;
+  border-radius: 3px;
+}
+.settingsDeleteTitle:hover{
+  background-color: #a90b0b;
 }
 
 .settingsForm {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.settingsForm > input{
+  width: 60%;
+  text-align: center;
+  transition: all ease 0.3s;
+}
+.settingsForm > input:focus{
+  outline: none;
+  border-bottom: 5px solid #18122B;
 }
 
 .settingsPP {
@@ -59,6 +79,7 @@
 .settingsForm > label {
   font-size: 20px;
   margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .settingsForm > input {
