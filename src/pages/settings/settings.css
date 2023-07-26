@@ -20,17 +20,17 @@
 }
 
 .settingsDeleteTitle {
-  color: red;
+  color: rgb(255, 255, 255);
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   cursor: pointer;
   background-color: #950101;
   padding: 1vh;
-  border-radius: 3px;
+  border-radius: 5px;
 }
-.settingsDeleteTitle:hover{
-  background-color: #a90b0b;
+.settingsDeleteTitle:hover {
+  background-color: #ffffff;
 }
 
 .settingsForm {
@@ -40,14 +40,14 @@
   align-items: center;
   flex-grow: 1;
 }
-.settingsForm > input{
+.settingsForm > input {
   width: 60%;
   text-align: center;
   transition: all ease 0.3s;
 }
-.settingsForm > input:focus{
+.settingsForm > input:focus {
   outline: none;
-  border-bottom: 5px solid #18122B;
+  border-bottom: 5px solid #18122b;
 }
 
 .settingsPP {
@@ -90,14 +90,14 @@
   border-bottom: 1px solid lightgray;
 }
 
-.settingsSubmit{
-    width: 150px;
-    align-self: center;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: teal;
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
+.settingsSubmit {
+  width: 150px;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: teal;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
 }
