@@ -1,34 +1,33 @@
 import "./settings.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config";
-
+import ImageUploader from "../../components/settings/ImageUploader";
 /*{line = 70 => here we need to ad something like if nothing typed dont change data. }*/
 
 export default function Settings() {
-  const [file, setFile] = useState(null);
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const { user, dispatch } = useContext(Context);
+  const [imgfile, setImgFile] = useState(user.profilePic || 'https://react.semantic-ui.com/images/avatar/large/matthew.png');
+  const [username, setUsername] = useState(user.username || '');
+  const [email, setEmail] = useState(user.email || '');
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const { user, dispatch } = useContext(Context);
-  //if user doesn't have a profilePic we show a replacement
-  const profilePic = user.profilePic
-    ? user.profilePic
-    : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
-  console.log("user is", user);
-
   //const PF = "cloudinary://831536928848822:Rpg3EXsGlbKoIwegxx3A0r5-Pas@bloghiv";
+  useEffect(()=> {
+    console.log(user)
+   }
+   ,[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(username, email, imgfile)
     dispatch({ type: "UPDATE_START" });
-    if (file) {
+    if (imgfile) {
       const data = new FormData();
       data.append("id", user._id);
       data.append("type", "file");
-      data.append("avatar", file);
+      data.append("avatar", imgfile);
       try {
         const res = await axiosInstance.post("users/upload", data);
         setSuccess(true);
@@ -50,36 +49,20 @@ export default function Settings() {
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Modificar imagen de perfil</label>
           <div className="settingsPP">
-            <img
-              src={file ? URL.createObjectURL(file) : profilePic}
-              alt="profile-pic"
-            />
-            <label htmlFor="fileInput">
-              <i className="settingsPPIcon far fa-user-circle"></i>
-            </label>
-
-            <input
-              action="/:id"
-              method="POST"
-              enctype="form-data"
-              type="file"
-              id="fileInput"
-              style={{ display: "none" }}
-              onClick={(e) => setFile(e.target.files[0])}
-            />
+          <ImageUploader defaultImage={imgfile} setDefaultImage={setImgFile}/>
           </div>
 
           <label>Modificar nombre de usuario</label>
 
           <input
             type="text"
-            placeholder={user.username}
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <label>Modificar Email</label>
           <input
             type="email"
-            placeholder={user.email}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Modificar contraseña</label>
