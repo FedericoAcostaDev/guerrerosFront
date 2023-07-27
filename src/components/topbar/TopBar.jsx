@@ -20,7 +20,7 @@ export default function TopBar() {
         <ul className="topList">
           <li className="topListItem">
             <Link className="link" to="/">
-              INI
+              INICIO
             </Link>
           </li>
           <li className="topListItem">
