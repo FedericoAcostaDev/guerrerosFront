@@ -27,7 +27,7 @@ export default function Register() {
     <div className="register">
       <span className="registerTitle">Register</span>
       <form className="registerForm" onSubmit={handleSubmit}>
-        <label>Username</label>
+        <label>Usuario</label>
         <input
           type="text"
           className="registerInput"
@@ -41,7 +41,7 @@ export default function Register() {
           placeholder="Enter your email..."
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label>Password</label>
+        <label>Contraseña</label>
         <input
           type="password"
           className="registerInput"
@@ -49,7 +49,7 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="registerButton" type="submit">
-          Register
+          Registrarse
         </button>
       </form>
       <button className="registerLoginButton">
@@ -59,7 +59,7 @@ export default function Register() {
       </button>
       {error && (
         <span style={{ color: "red", marginTop: "10px" }}>
-          Something went wrong!
+          Surgió un problema, intenta modificar los datos.
         </span>
       )}
     </div>
