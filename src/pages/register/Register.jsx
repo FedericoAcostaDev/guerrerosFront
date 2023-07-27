@@ -25,27 +25,27 @@ export default function Register() {
   };
   return (
     <div className="register">
-      <span className="registerTitle">Register</span>
+      <span className="registerTitle">Registrarse</span>
       <form className="registerForm" onSubmit={handleSubmit}>
         <label>Usuario</label>
         <input
           type="text"
           className="registerInput"
-          placeholder="Enter your username..."
+          placeholder="Nombre de usuario"
           onChange={(e) => setUsername(e.target.value)}
         />
         <label>Email</label>
         <input
           type="text"
           className="registerInput"
-          placeholder="Enter your email..."
+          placeholder="Escribe un mail"
           onChange={(e) => setEmail(e.target.value)}
         />
         <label>Contraseña</label>
         <input
           type="password"
           className="registerInput"
-          placeholder="Enter your password..."
+          placeholder="Escribe una contraseña"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="registerButton" type="submit">
@@ -54,7 +54,7 @@ export default function Register() {
       </form>
       <button className="registerLoginButton">
         <Link className="link" to="/login">
-          Login
+          Ya tengo cuenta
         </Link>
       </button>
       {error && (
