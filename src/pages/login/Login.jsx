@@ -27,14 +27,14 @@ export default function Login() {
     <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label>Username</label>
+        <label>Usuario</label>
         <input
           type="text"
           className="loginInput"
           placeholder="Enter your username..."
           ref={userRef}
         />
-        <label>Password</label>
+        <label>Contraseña</label>
         <input
           type="password"
           className="loginInput"
@@ -42,12 +42,12 @@ export default function Login() {
           ref={passwordRef}
         />
         <button className="loginButton" type="submit" disabled={isFetching}>
-          Login
+          Entrar
         </button>
       </form>
       <button className="loginRegisterButton">
         <Link className="link" to="/register">
-          Register
+          ¿No tienes cuenta? Registrarse
         </Link>
       </button>
     </div>

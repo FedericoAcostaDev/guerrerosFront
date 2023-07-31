@@ -6,7 +6,6 @@
   top: 0;
   display: flex;
   align-items: center;
-  font-family: "Josefin Sans", sans-serif;
   z-index: 999;
 }
 
@@ -50,6 +49,7 @@
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .topSearchIcon {

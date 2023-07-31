@@ -72,7 +72,7 @@ export default function Write() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
-            Image
+            Añadir imagen
             <FcAddImage className="icon" />
           </label>
           <input
@@ -85,7 +85,7 @@ export default function Write() {
           />
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Titulo"
             className="writeInput"
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
@@ -93,20 +93,20 @@ export default function Write() {
         </div>
         <div className="writeFormGroup">
           <textarea
-            placeholder="Tell your story..."
+            placeholder="Contenido de post"
             type="text"
             className="writeInput writeText"
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>
         <button className="writeSubmit" type="submit">
-          Publish
+          Publicar
         </button>
         {success && (
           <span
             style={{ color: "green", textAlign: "center", marginTop: "20px" }}
           >
-            Post has been uploaded...
+            Tu post ha sido publicado...
           </span>
         )}
       </form>
