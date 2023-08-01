@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import "./ImageUploader.css"
 const ImageUploader = ({defaultImage, setDefaultImage}) => {
   const fileInput = useRef(null);
@@ -20,7 +20,7 @@ const ImageUploader = ({defaultImage, setDefaultImage}) => {
   }
   return (
     <div className='imageUploader'>
-      <input type="file" accept="image/*" ref={fileInput} onChange={handleFileChange}/>
+      <input type="file" accept="image/*" ref={fileInput} onChange={handleFileChange} name='avatar'/>
       <img src={defaultImage} alt="Preview"/>
       <div className='imageUploader__text' onClick={handleClick}>Subir nueva imagen</div>
     </div>

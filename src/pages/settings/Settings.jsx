@@ -21,7 +21,6 @@ export default function Settings() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, email, imgfile)
     dispatch({ type: "UPDATE_START" });
     if (imgfile) {
       const data = new FormData();
@@ -29,7 +28,7 @@ export default function Settings() {
       data.append("type", "file");
       data.append("avatar", imgfile);
       try {
-        const res = await axiosInstance.post("users/upload", data);
+        const res = await axiosInstance.post("users/upload", data, {headers: {"Content-Type": "multipart/form-data"}});
         setSuccess(true);
         dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       } catch (err) {
@@ -46,7 +45,7 @@ export default function Settings() {
           <span className="settingsUpdateTitle">Perfil</span>
           <span className="settingsDeleteTitle">Eliminar cuenta</span>
         </div>
-        <form className="settingsForm" onSubmit={handleSubmit}>
+        <form className="settingsForm" onSubmit={handleSubmit} method="post" encType="multipart/form-data">
           <label>Modificar imagen de perfil</label>
           <div className="settingsPP">
           <ImageUploader defaultImage={imgfile} setDefaultImage={setImgFile}/>
